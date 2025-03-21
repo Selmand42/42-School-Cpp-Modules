@@ -1,0 +1,21 @@
+NAME = Bureaucrat
+
+FLAGS = -Wall -Wextra -Werror -std=c++98
+
+CPP = c++
+
+RM = rm -rf
+
+SRCS = main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp Intern.cpp
+
+all: $(NAME)
+
+$(NAME): $(SRCS)
+	$(CPP) $(FLAGS) $(SRCS) -o $(NAME)
+
+clean:
+	$(RM) $(NAME)
+
+re: clean all
+
+.PHONY:all re clean
